@@ -12,7 +12,8 @@ This application has implemented unit tests, and online mock API
 
 ## How To Login
 1. First run this app in xcode
-2. Then log in with a free username
-3. Then the password follows the requirements of 8 characters long and contains at least one uppercase letter and one digit
+2. to compile carthage file run this in terminal carthage build --platform iOS --use-xcframeworks
+3. Then log in with a free username
+4. Then the password follows the requirements of 8 characters long and contains at least one uppercase letter and one digit
 
 
