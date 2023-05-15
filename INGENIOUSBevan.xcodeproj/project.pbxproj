@@ -32,6 +32,7 @@
 		1E9E4A2A2A109E3900CEC6A5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E4A292A109E3900CEC6A5 /* LoadingView.swift */; };
 		1E9E4A2F2A10E26C00CEC6A5 /* DetailListServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E4A2E2A10E26C00CEC6A5 /* DetailListServiceMock.swift */; };
 		1E9E4A3E2A10E4A200CEC6A5 /* DetailListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E4A3D2A10E4A200CEC6A5 /* DetailListPresenterTest.swift */; };
+		1E9E4A402A11C57F00CEC6A5 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E4A3F2A11C57F00CEC6A5 /* UIApplicationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		1E9E4A2E2A10E26C00CEC6A5 /* DetailListServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListServiceMock.swift; sourceTree = "<group>"; };
 		1E9E4A342A10E41400CEC6A5 /* INGENIOUSBevanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = INGENIOUSBevanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9E4A3D2A10E4A200CEC6A5 /* DetailListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListPresenterTest.swift; sourceTree = "<group>"; };
+		1E9E4A3F2A11C57F00CEC6A5 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				1E9E4A1C2A0FC33800CEC6A5 /* UrlConstant.swift */,
 				1E9E4A192A0F206A00CEC6A5 /* NetworkService.swift */,
+				1E9E4A3F2A11C57F00CEC6A5 /* UIApplicationExtension.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				1E9E4A1F2A0FC59000CEC6A5 /* User.swift in Sources */,
 				1E9E4A162A0F204200CEC6A5 /* DetailListPresenter.swift in Sources */,
 				1E9E49F52A0E216000CEC6A5 /* LoginFormView.swift in Sources */,
+				1E9E4A402A11C57F00CEC6A5 /* UIApplicationExtension.swift in Sources */,
 				1E9E4A2F2A10E26C00CEC6A5 /* DetailListServiceMock.swift in Sources */,
 				1E9E4A272A109DAC00CEC6A5 /* SecureTextfield.swift in Sources */,
 				1E9E4A182A0F205800CEC6A5 /* DetailListService.swift in Sources */,
