@@ -16,6 +16,8 @@ protocol DetailListPresenterProtocol {
 
 class DetailListPresenter: DetailListPresenterProtocol {
     
+    // MARK: - Properties
+    
     var listUser: [User]? {
         didSet {
             self.view?.reloadData()
@@ -30,6 +32,8 @@ class DetailListPresenter: DetailListPresenterProtocol {
     init(service: DetailListServiceProtocol = DetailListService()) {
         self.service = service
     }
+    
+    // MARK: - Public Methods
     
     func getListData() {
         service.getListData { userData, errorResponse in
@@ -60,6 +64,8 @@ class DetailListPresenter: DetailListPresenterProtocol {
                 }
         }
     }
+    
+    // MARK: - Private Methods
     
     private func handleListUserResponse(user: [User]) {
         self.listUser = user

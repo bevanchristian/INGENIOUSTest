@@ -9,6 +9,8 @@ import UIKit
 
 class DetailListTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
+    
     private var profilePicture: ImageViewLoader = {
         let profilePicture = ImageViewLoader()
         profilePicture.image = UIImage(named: "DefaultFemale")
@@ -51,6 +53,8 @@ class DetailListTableViewCell: UITableViewCell {
         setConstraint()
     }
     
+    // MARK: - Public Methods
+    
     func configureCell(user: User?) {
         self.nameLabel.text = user?.name ?? "Empty Name"
         self.phoneLabel.text = user?.phone ?? "-"
@@ -62,6 +66,7 @@ class DetailListTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Private Methods
     private func setConstraint() {
         self.contentView.addSubview(profilePicture)
         self.contentView.addSubview(nameLabel)

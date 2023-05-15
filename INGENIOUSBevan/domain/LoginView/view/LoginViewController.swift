@@ -19,11 +19,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
+        setConstraint()
         setDelegate()
     }
     
-    private func setView() {
+    private func setConstraint() {
         self.view.addSubview(loginFormView)
         loginFormView.leadingAnchor.constraint(
             equalTo: self.view.leadingAnchor

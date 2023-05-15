@@ -9,6 +9,7 @@ import UIKit
 
 class TextFieldWithPadding: UITextField {
     
+    // MARK: - Properties
     private var textPadding = UIEdgeInsets(
         top: 10,
         left: 0,
@@ -43,13 +44,21 @@ class TextFieldWithPadding: UITextField {
         setup()
     }
     
+    // MARK: - Setup
     private func setup() {
         // Set up company logo
         leftIcon.contentMode = .scaleAspectFit
         leftIcon.frame = CGRect(x: 8, y: 0, width: 20, height: 20)
-        let companyLogoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
-        companyLogoContainer.addSubview(leftIcon)
-        leftView = companyLogoContainer
+        let leftIconContainer = UIView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: 30,
+                height: 20
+            )
+        )
+        leftIconContainer.addSubview(leftIcon)
+        leftView = leftIconContainer
         leftViewMode = .always
     }
     

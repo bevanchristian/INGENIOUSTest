@@ -9,16 +9,31 @@ import UIKit
 
 class SecureTextField: UITextField {
     
+    // MARK: - Properties
+    
     private var textPadding = UIEdgeInsets(
         top: 10,
         left: 0,
         bottom: 10,
         right: 30
     )
-    // MARK: - Properties
+
+    private lazy var passwordToggle: UIButton = {
+        let passwordToggle =  UIButton(type: .custom)
+        passwordToggle.setImage(UIImage(named: "icon_eye_close"), for: .normal)
+        passwordToggle.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        passwordToggle.tintColor = .lightGray
+        passwordToggle.addTarget(self, action: #selector(passwordToggleTapped), for: .touchUpInside)
+        return passwordToggle
+    }()
     
-    private let passwordToggle = UIButton(type: .custom)
-    private let companyLogo = UIImageView()
+    private let companyLogo: UIImageView = {
+        let companyLogo = UIImageView()
+        companyLogo.image = UIImage(named: "icon_password")
+        companyLogo.contentMode = .scaleAspectFit
+        companyLogo.frame = CGRect(x: 8, y: 0, width: 20, height: 20)
+        return companyLogo
+    }()
     
     // MARK: - Initializers
     
@@ -42,26 +57,18 @@ class SecureTextField: UITextField {
         return rect.inset(by: textPadding)
     }
     
-    // MARK: - Private Methods
+    // MARK: - Setup
     
     private func setup() {
         // Set up password toggle button
-        passwordToggle.setImage(UIImage(named: "icon_eye_close"), for: .normal)
-        passwordToggle.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        passwordToggle.tintColor = .lightGray
-        passwordToggle.addTarget(self, action: #selector(passwordToggleTapped), for: .touchUpInside)
-    
-        let paddingRightView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        paddingRightView.addSubview(passwordToggle)
-        paddingRightView.frame.size.width += 20
-        rightView = paddingRightView
+        let passwordContainer = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        passwordContainer.addSubview(passwordToggle)
+        passwordContainer.frame.size.width += 20
+        rightView = passwordContainer
         rightViewMode = .always
-
+        
         
         // Set up company logo
-        companyLogo.image = UIImage(named: "icon_password")
-        companyLogo.contentMode = .scaleAspectFit
-        companyLogo.frame = CGRect(x: 8, y: 0, width: 20, height: 20)
         let companyLogoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
         companyLogoContainer.addSubview(companyLogo)
         leftView = companyLogoContainer

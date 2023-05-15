@@ -13,7 +13,9 @@ enum UrlConstant {
     var urlValue: URL {
         switch self {
         case .list:
-            return URL(string: "https://639853d7044fa481d6994c23.mockapi.io/INGENIOUSLAB")!
+            return URL(
+                string: "https://639853d7044fa481d6994c23.mockapi.io/INGENIOUSLAB"
+            )!
         }
     }
 }

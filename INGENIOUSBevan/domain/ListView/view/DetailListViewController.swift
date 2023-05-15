@@ -15,6 +15,8 @@ protocol DetailListViewControllerProtocol {
 
 class DetailListViewController: UIViewController, DetailListViewControllerProtocol {
 
+    // MARK: - Properties
+    
     var presenter: DetailListPresenterProtocol?
     var searchTimer: Timer?
     
@@ -33,7 +35,10 @@ class DetailListViewController: UIViewController, DetailListViewControllerProtoc
         tableview.delegate = self
         tableview.dataSource = self
         tableview.translatesAutoresizingMaskIntoConstraints = false
-        tableview.register(DetailListTableViewCell.self, forCellReuseIdentifier: "DetailListTableViewCell")
+        tableview.register(
+            DetailListTableViewCell.self,
+            forCellReuseIdentifier: "DetailListTableViewCell"
+        )
         return tableview
     }()
 
@@ -46,6 +51,19 @@ class DetailListViewController: UIViewController, DetailListViewControllerProtoc
         presenter?.getListData()
     }
     
+    // MARK: - Public Methods
+    func setErrorResponse(errorMessage: String) {
+        loadingView.hide()
+        ToastView(errorMessage).show()
+    }
+    
+    func reloadData() {
+        loadingView.hide()
+        self.tableView.reloadData()
+    }
+    
+    
+    // MARK: - Private Methods
     private func setConstraint() {
         self.view.addSubview(searchTextfield)
         self.view.addSubview(tableView)
@@ -75,17 +93,6 @@ class DetailListViewController: UIViewController, DetailListViewControllerProtoc
             equalTo: self.view.trailingAnchor
         ).isActive = true
     }
-    
-    func setErrorResponse(errorMessage: String) {
-        loadingView.hide()
-        ToastView(errorMessage).show()
-    }
-    
-    func reloadData() {
-        loadingView.hide()
-        self.tableView.reloadData()
-    }
-
 }
 
 extension DetailListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -106,6 +113,7 @@ extension DetailListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let view = DetailViewController()
         let curentData = self.presenter?.listUser?[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         
         view.configureDetail(detailData: DetailViewDataModel(
             name: curentData?.name ?? "",
@@ -116,7 +124,6 @@ extension DetailListViewController: UITableViewDelegate, UITableViewDataSource {
         ))
         
         self.navigationController?.pushViewController(view, animated: true)
-        
     }
     
     
