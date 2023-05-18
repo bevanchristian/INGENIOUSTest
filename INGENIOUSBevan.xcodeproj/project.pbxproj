@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E9E08D42A15BDF100531A47 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E08D32A15BDF100531A47 /* UIViewControllerExtension.swift */; };
 		1E9E49DF2A0E211800CEC6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E49DE2A0E211800CEC6A5 /* AppDelegate.swift */; };
 		1E9E49E32A0E211800CEC6A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E49E22A0E211800CEC6A5 /* LoginViewController.swift */; };
 		1E9E49E82A0E211A00CEC6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E49E72A0E211A00CEC6A5 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E9E08D32A15BDF100531A47 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1E9E49DB2A0E211800CEC6A5 /* INGENIOUSBevan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INGENIOUSBevan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9E49DE2A0E211800CEC6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E9E49E22A0E211800CEC6A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				1E9E4A1C2A0FC33800CEC6A5 /* UrlConstant.swift */,
 				1E9E4A192A0F206A00CEC6A5 /* NetworkService.swift */,
 				1E9E4A3F2A11C57F00CEC6A5 /* UIApplicationExtension.swift */,
+				1E9E08D32A15BDF100531A47 /* UIViewControllerExtension.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				1E9E4A032A0E436400CEC6A5 /* DetailViewController.swift in Sources */,
 				1E9E4A1D2A0FC33800CEC6A5 /* UrlConstant.swift in Sources */,
 				1E9E4A2A2A109E3900CEC6A5 /* LoadingView.swift in Sources */,
+				1E9E08D42A15BDF100531A47 /* UIViewControllerExtension.swift in Sources */,
 				1E9E4A252A10169100CEC6A5 /* ImageViewLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

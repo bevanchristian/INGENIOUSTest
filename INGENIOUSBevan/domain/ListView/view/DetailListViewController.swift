@@ -45,6 +45,7 @@ class DetailListViewController: UIViewController, DetailListViewControllerProtoc
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Inglab Assessment"
+        hideKeyboardWhenTappedAround()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.setConstraint()
         loadingView.show()
@@ -140,4 +141,9 @@ extension DetailListViewController: UISearchBarDelegate {
             self?.searchTimer = nil
         }
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchTextfield.endEditing(true)
+    }
+    
 }

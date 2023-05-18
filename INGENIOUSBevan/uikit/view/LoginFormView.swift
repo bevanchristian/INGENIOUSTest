@@ -11,7 +11,7 @@ protocol LoginFormViewDelegate: AnyObject {
     func login()
 }
 
-class LoginFormView: UIView {
+class LoginFormView: UIView, UITextFieldDelegate {
     
     weak var delegate: LoginFormViewDelegate?
     
@@ -42,7 +42,7 @@ class LoginFormView: UIView {
         return inglabAsessmentLabel
     }()
     
-    private var usernameTextField: TextFieldWithPadding = {
+    private lazy var usernameTextField: TextFieldWithPadding = {
         let usernameTextField = TextFieldWithPadding(leftIcon: UIImage(named: "icon_user"))
         usernameTextField.placeholder = "Username"
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +51,7 @@ class LoginFormView: UIView {
         usernameTextField.layer.borderWidth = 1.0
         usernameTextField.layer.borderColor = UIColor.lightGray.cgColor
         usernameTextField.layer.cornerRadius = 4
+        usernameTextField.delegate = self
         return usernameTextField
     }()
     
@@ -65,7 +66,7 @@ class LoginFormView: UIView {
         return descriptionLabel
     }()
     
-    private var passwordTextField: SecureTextField = {
+    private lazy var passwordTextField: SecureTextField = {
         let passwordTextField = SecureTextField()
         passwordTextField.placeholder = "Password"
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +75,7 @@ class LoginFormView: UIView {
         passwordTextField.isSecureTextEntry = true
         passwordTextField.layer.borderWidth = 1.0
         passwordTextField.layer.borderColor = UIColor.gray.cgColor
+        passwordTextField.delegate = self
         return passwordTextField
     }()
     
@@ -249,5 +251,10 @@ class LoginFormView: UIView {
         //Check if password is at least 8 characters long and contains at least one uppercase letter and one digit
         let passwordRegex = "^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,}$"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return false
     }
 }
